@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.servlet.repository.JobRepository">
+    <insert id="save" parameterType="com.example.servlet.entity.JobMessage">
+
+         insert  into jobregister(jobName,jobConditionOne,jobConditionTwo,cpnName,jobPay,uuid,username,image) values (#{jobName},#{jobConditionOne},#{jobConditionTwo},#{cpnName},#{jobPay},#{uuid},#{username},#{image})
+
+
+    </insert>
+    <delete id="deleteby" parameterType="com.example.servlet.entity.JobMessage">
+
+delete from jobregister where uuid=#{uuid}
+
+
+    </delete>
+    <update id="update" parameterType="com.example.servlet.entity.JobMessage">
+
+        update jobregister set    jobName=#{jobName},jobConditionOne=#{jobConditionOne}, jobConditionTwo=#{jobConditionTwo},cpnName=#{cpnName}, jobPay=#{jobPay},uuid=#{uuid},username=#{username},image=#{image}         where  uuid=#{uuid}
+
+
+
+
+
+
+    </update>
+</mapper>

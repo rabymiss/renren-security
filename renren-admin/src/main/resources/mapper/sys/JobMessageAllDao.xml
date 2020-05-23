@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.sys.dao.JobMessageAllDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.sys.entity.JobMessageAllEntity" id="jobMessageAllMap">
+        <result property="id" column="id"/>
+        <result property="jobname" column="jobName"/>
+        <result property="cpnaddress" column="cpnAddress"/>
+        <result property="good1" column="good1"/>
+        <result property="good2" column="good2"/>
+        <result property="good3" column="good3"/>
+        <result property="good4" column="good4"/>
+        <result property="jobpay" column="jobPay"/>
+        <result property="conditionone" column="conditionOne"/>
+        <result property="conditiontwo" column="conditionTwo"/>
+        <result property="condition3" column="condition3"/>
+        <result property="workcontent" column="workContent"/>
+        <result property="workcontentshow" column="workContentShow"/>
+        <result property="dizhi" column="Dizhi"/>
+        <result property="workaddress" column="workAddress"/>
+        <result property="cpnimage" column="cpnImage"/>
+        <result property="cpnname1" column="cpnName1"/>
+    </resultMap>
+
+
+</mapper>

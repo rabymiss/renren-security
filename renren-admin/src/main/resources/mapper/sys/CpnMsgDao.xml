@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.sys.dao.CpnMsgDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.sys.entity.CpnMsgEntity" id="cpnMsgMap">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="nickname" column="nickname"/>
+        <result property="icon" column="icon"/>
+        <result property="burthday" column="burthday"/>
+        <result property="email" column="email"/>
+        <result property="phonenumber" column="phonenumber"/>
+        <result property="addressp" column="addressp"/>
+        <result property="workin" column="workin"/>
+        <result property="showyou" column="showyou"/>
+        <result property="uuid" column="uuid"/>
+    </resultMap>
+
+
+</mapper>

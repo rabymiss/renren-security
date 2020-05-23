@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.servlet.repository.FileDao">
+
+
+    <insert id="save" parameterType="com.example.servlet.entity.File2">
+        insert into  files (username,f1,f2) values (#{username},#{f1},#{f2})
+    </insert>
+    <select id="findimg" resultType="com.example.servlet.entity.File2">
+        select * from files where username=#{username}
+    </select>
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.servlet.repository.UserRepository">
+
+    <insert id="save" parameterType="com.example.servlet.entity.User">
+
+    insert  into userregister(username,password) values (#{username},#{password})
+
+
+
+</insert>
+    <select id="findUser" parameterType="java.lang.String" resultType="java.lang.Long">
+        select COUNT(*) from userregister where username=#{username} and password=#{password}
+    </select>
+
+    <insert id="savefor" parameterType="com.example.servlet.entity.User">
+        insert into t_user(username,password) VALUES (#{username},#{password})
+    </insert>
+    <select id="findUserfor" resultType="java.lang.Long">
+              select COUNT(*) from t_user where username=#{username} and password=#{password}
+
+    </select>
+    <delete id="deleteusertttttuu">
+
+        delete from t_user where username=#{username}
+
+    </delete>
+    <delete id="deleteuser">
+        delete from userregister where username=#{username}
+    </delete>
+    <update id="update" parameterType="com.example.servlet.entity.User">
+
+        update userregister set username=#{username},password=#{password} where username=#{username}
+    </update>
+
+
+</mapper>

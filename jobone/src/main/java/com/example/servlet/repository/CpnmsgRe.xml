@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.servlet.repository.CpnmsgDao">
+
+    <insert id="save" parameterType="com.example.servlet.entity.CpnMsgEn">
+        insert  into cpn_msg( username,nickname,icon,burthday,email,phonenumber,addressp,workin,showyou) values (#{username},#{nickname},#{icon},#{burthday},#{email},#{phonenumber},#{addressp},#{workin},#{showyou})
+
+
+
+    </insert>
+    <select id="findcpn" resultType="com.example.servlet.entity.CpnMsgEn">
+        select * from cpn_msg where workin=#{workin}
+    </select>
+    <update id="update" parameterType="com.example.servlet.entity.CpnMsgEn">
+
+
+update cpn_msg set  icon=#{icon} ,  username=#{username},nickname=#{nickname},burthday=#{burthday},email=#{email},phonenumber=#{phonenumber},addressp=#{addressp},showyou=#{showyou} where workin=#{workin}
+
+    </update>
+</mapper>

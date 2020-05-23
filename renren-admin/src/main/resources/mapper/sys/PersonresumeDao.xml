@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.renren.modules.sys.dao.PersonresumeDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.renren.modules.sys.entity.PersonresumeEntity" id="personresumeMap">
+        <result property="id" column="id"/>
+        <result property="addresswork" column="addressWork"/>
+        <result property="birthday" column="birthday"/>
+        <result property="email" column="email"/>
+        <result property="ifmary" column="ifMary"/>
+        <result property="phone" column="phone"/>
+        <result property="politics" column="politics"/>
+        <result property="qwer" column="qwer"/>
+        <result property="showbyshelf" column="showbyshelf"/>
+        <result property="teached" column="teached"/>
+        <result property="workming" column="workming"/>
+        <result property="youname" column="youname"/>
+        <result property="img" column="img"/>
+        <result property="uuid" column="uuid"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+
+</mapper>

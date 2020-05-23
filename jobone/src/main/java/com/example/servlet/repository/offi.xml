@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.servlet.repository.OffiDao">
+
+
+    <insert id="save" parameterType="com.example.servlet.entity.Officesend">
+
+        insert into officesend(jobname,rencainame,oftime,lianxiren,lxphone,cpnname,cpnid,ofuuid,dozhi,email,t1,t2,ofcontent)
+
+          values (#{jobname},#{rencainame},#{oftime},#{lianxiren},#{lxphone},#{cpnname},#{cpnid},#{ofuuid},#{dozhi},#{email},#{t1},#{t2},#{ofcontent})
+
+    </insert>
+    <select id="findall" resultType="com.example.servlet.entity.Officesend">
+        select * from officesend
+
+
+    </select>
+    <select id="findoffiby" resultType="com.example.servlet.entity.Officesend">
+          select * from officesend where t1=#{t1}
+
+    </select>
+    <delete id="deleteby" parameterType="com.example.servlet.entity.Officesend">
+        delete from officesend where ofuuid=#{ofuuid} and cpnid=#{cpnid} or t1=#{t1}
+
+
+    </delete>
+    <select id="findoffibycpnid" resultType="com.example.servlet.entity.Officesend">
+             select * from officesend where cpnid=#{cpnid}
+    </select>
+</mapper>

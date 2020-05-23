@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.servlet.repository.ResumeRepository">
+
+
+
+    <select id="findAllby" parameterType="com.example.servlet.entity.Resume"
+            resultType="com.example.servlet.entity.Resume">
+        select   * from resume where cpnid=#{cpnid}
+    </select>
+
+
+    <insert id="save" parameterType="com.example.servlet.entity.Resume">
+        insert into resume (youname,birthday,politics,email,phone,addresswork,ifmary,qwer,
+        teached,workming,showbyshelf,uuid,cpnid,t1,img)  values
+         (#{youname},#{birthday},#{politics},#{email},#{phone},#{addresswork},#{ifmary},#{qwer},
+#{teached},
+#{workming},
+#{showbyshelf},
+#{uuid},
+#{cpnid},
+#{t1},#{img})
+
+
+
+
+    </insert>
+
+    <delete id="deletebyuuid" parameterType="com.example.servlet.entity.Resume">
+
+
+        delete from resume where uuid=#{uuid} and cpnid=#{cpnid} or t1=#{t1}
+    </delete>
+
+
+
+    <insert id="savep" parameterType="com.example.servlet.entity.PersonResume">
+
+
+        insert into personresume(    addressWork, birthday,email,ifMary,phone,politics,qwer,showbyshelf,
+teached,workming, youname,img,uuid,userid)values (#{addressWork},#{birthday},#{email},#{ifMary},
+#{phone},#{politics},#{qwer},#{showbyshelf},#{teached},#{workming},#{youname},#{img},#{uuid},#{userid})
+    </insert>
+    <select id="findAllbyp" resultType="com.example.servlet.entity.PersonResume"
+            parameterType="com.example.servlet.entity.PersonResume">
+
+        select * from personresume where userid=#{userid}
+
+    </select>
+
+    <delete id="deletebdp" parameterType="com.example.servlet.entity.PersonResume">
+
+        delete from personresume where userid=#{userid}
+    </delete>
+    <update id="updatep" parameterType="com.example.servlet.entity.PersonResume">
+
+        update personresume  set  addressWork=#{addressWork}, birthday=#{birthday},email=#{email},ifMary=#{ifMary},phone=#{phone},
+        politics=#{politics},qwer=#{qwer},showbyshelf=#{showbyshelf},
+teached=#{teached},workming=#{workming}, youname=#{youname},img=#{img},uuid=#{uuid},userid=#{userid} where userid=#{userid}
+
+    </update>
+</mapper>
